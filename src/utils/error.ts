@@ -10,6 +10,12 @@ export const extractErrorMessages = (error: unknown): string[] => {
   const axiosError = error as AxiosError<ApiErrorPayload>
   const responseData = axiosError.response?.data
 
+  if (axiosError.response?.status === 500) {
+    return [
+      'Server could not save this vehicle. Ensure unique values for plate number, national ID, mobile, email, policy number, roadworthy certificate, and customs reference.',
+    ]
+  }
+
   if (responseData?.errors?.length) {
     return responseData.errors
       .map((item) => {

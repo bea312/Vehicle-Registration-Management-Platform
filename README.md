@@ -4,12 +4,12 @@ A modern web application for managing vehicle registration records with a public
 
 ## Overview
 
-This platform allows users to view registered vehicles publicly and enables administrators to manage records through a secure login area. It is designed as a front-end application with local mock persistence for easy demo and development use.
+This platform allows users to view registered vehicles publicly and enables administrators to manage records through a secure login area. It integrates with a live Railway backend API and uses client-side authentication simulation for protected workflows.
 
 ## Key Features
 
 - Public vehicle registry homepage with search
-- Vehicle details view available from the public list
+- Vehicle details view for authenticated users
 - Admin authentication for protected operations
 - Dashboard for management actions
 - Multi-step vehicle registration form
@@ -17,13 +17,13 @@ This platform allows users to view registered vehicles publicly and enables admi
 - Delete vehicle records
 - Field validation and user-friendly error handling
 - Loading states and status indicators
-- Local data persistence using browser storage
+- Live backend data via Railway API
 
 ## Demo Login Credentials
 
 Use the following credentials for admin access:
 
-- Email: test@gmail.com
+- Email: `test@gmail.com`
 - Password: Password!234
 
 ## Technology Stack
@@ -74,22 +74,22 @@ Run:
 ## User Flows
 
 - Public user:
-	- Open homepage
-	- Search vehicles by plate, model, or owner
-	- Open vehicle details
+  - Open homepage
+  - Search vehicles by plate, model, or owner
+  - Login to access detailed vehicle view
 
 - Admin user:
-	- Login with demo credentials
-	- Access dashboard
-	- Register new vehicle
-	- Edit existing vehicle
-	- Delete vehicle
+  - Login with demo credentials
+  - Access dashboard
+  - Register new vehicle
+  - Edit existing vehicle
+  - Delete vehicle
 
 ## Data and Persistence
 
-- Vehicle records are stored in browser localStorage
-- The app includes seeded sample vehicle data for demo usage
-- Clearing browser storage resets the dataset to seed values
+- Vehicle records are fetched from a Railway backend API
+- Frontend uses TanStack Query for caching and refetching
+- Authentication state is simulated on the client and stored in localStorage
 
 ## Validation and Error Handling
 
@@ -103,10 +103,11 @@ This project demonstrates a practical, production-style UI for vehicle registry 
 
 ## Future Improvements
 
-- Backend API integration
 - Role-based access control
 - Audit logs for admin actions
 - Advanced filtering and export options
 - Unit and integration test coverage
-##  Author  Name
- Mukagasirabo Beatrice 
+
+## Author Name
+
+Mukagasirabo Beatrice

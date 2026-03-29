@@ -36,7 +36,11 @@ function App() {
 
           <Route
             path="vehicle/:id"
-            element={<VehicleDetailsPage />}
+            element={
+              <ProtectedRoute>
+                <VehicleDetailsPage />
+              </ProtectedRoute>
+            }
           />
 
           <Route
